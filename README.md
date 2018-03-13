@@ -1,1 +1,2 @@
-# arm-exporter-docker
+# dockerd-exporter-docker
+All credits go to @stefanprodan 
