@@ -1,1 +1,14 @@
+FROM arm32v6/alpine
+COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
 
+MAINTAINER Raymond Mouthaan <raymondmmouthaan@gmail.com>
+
+RUN apk add --no-cache socat
+
+ENV IN="172.18.0.1:9323" \
+    OUT="9323"
+
+ENV IN="172.18.0.1:9323" \
+    OUT="9323"
+
+ENTRYPOINT socat -d -d TCP-L:$OUT,fork TCP:$IN
